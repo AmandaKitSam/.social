@@ -1,0 +1,38 @@
+<h1>Sign Up</h1>
+
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+
+<%= form_for @user do |f| %>
+
+  <fieldset>
+    <%= f.label :email %>
+    <%= f.email_field :email, :required => true %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <!-- password_field -> can't show password -->
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </fieldset>
+
+<%= f.submit "Sign Up!" %>
+<!-- a submit button says Sign Up! -->
+
+<% end  %>
+
+
+
+
+<p>Users#new - Find me in app/views/users/new.html.erb</p>
