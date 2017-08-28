@@ -9,5 +9,6 @@
 
 User.destroy_all
 
-u1 = User.create :email => 'amanda@ga.co', :password => 'chicken', :password_confirmation => 'chicken'
-u2 = User.create :email => 'john@ga.co', :password => 'chicken', :password_confirmation => 'chicken'
+u1 = User.create :email => 'amanda@ga.co', :password => 'chicken', :password_confirmation => 'chicken', :name => 'Amanda', :location => 'Sydney', :joinedDate => '28/08/2017', :dob => '24/09', :userPhoto => 'https://www.unitedwaynorman.org/sites/unitedwaynorman.org/files/cutepuppy.jpg'
+u2 = User.create :email => 'john@ga.co', :password => 'chicken', :password_confirmation => 'chicken', :name => 'John', :location => 'Sydney', :joinedDate => '28/08/2017', :dob => '05/01', :userPhoto => 'https://www.guidedogs.com.au/sites/default/files/subscribe-dog_0.png'
+puts u1

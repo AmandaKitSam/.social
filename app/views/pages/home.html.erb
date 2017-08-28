@@ -1,7 +1,14 @@
 <h1>Pages Home</h1>
 
 <% if @current_user.present? %>
-  Welcome back <%= @current_user.email %>
+  Welcome Back <%= @current_user.name %></br>
+<% end %>
+
+<% if @current_user.present?  %>
+  <%= image_tag @current_user.userPhoto, :class => 'userPhoto' %></br>
+  Log in as: <%= @current_user.email %></br>
+  Location: <%= @current_user.location %></br>
+  Joined: <%= @current_user.joinedDate %></br>
 <% end %>
 
 
