@@ -1,11 +1,11 @@
-<h1>Pages Home</h1>
+<h1>Pages Home (Home Page for users and non-users)</h1>
 
 <% if @current_user.present? %>
   Welcome Back <%= @current_user.name %></br>
 <% end %>
 
 <% if @current_user.present?  %>
-  <%= image_tag @current_user.userPhoto, :class => 'userPhoto' %></br>
+  <%= image_tag @current_user.userPhoto, :class => 'userPhoto' unless @current_user.userPhoto.nil? %></br>
   Log in as: <%= @current_user.email %></br>
   Location: <%= @current_user.location %></br>
   Joined: <%= @current_user.joinedDate %></br>

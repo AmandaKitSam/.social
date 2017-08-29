@@ -4,9 +4,8 @@ class CreatePhotos < ActiveRecord::Migration[5.1]
       t.text :title
       t.text :image
       t.text :comment
-      t.integer :likes
       t.integer :user_id # Need it for likes
-      t.integer :photo_id # Need it for number of photo?
+      t.integer :photo_id # Need it to show which photo?
 
       t.timestamps
     end

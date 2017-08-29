@@ -1,0 +1,14 @@
+<h1>All Posts</h1>
+
+<% @posts.each do |p| %>
+  Date Of Post: <%= p.dateOfPost %></br>
+  Post: <%= p.reply %></br>
+<% end %>
+
+<textarea name="comments" cols="40" rows="10">
+  Enter your comments...
+</textarea>
+
+<button type="submit" name="submit">Reply</button>
+
+<p>Find me in app/views/post/index.html.erb</p>

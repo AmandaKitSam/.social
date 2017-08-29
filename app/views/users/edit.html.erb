@@ -1,17 +1,29 @@
-<h1>Edit User</h1>
+<h1>Edit Your Profile</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<fieldset>
+  <legend>Your Details</legend>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= form_for @user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :dob %>
-  <%= f.date_field :dob %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+    <%= f.label :dob %>
+    <%= f.date_field :dob %>
 
-  <%= f.submit %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+
+    <%= f.label :userPhoto %>
+    <%= f.text_field :userPhoto %>
+    <input type="submit" value="Upload">
+
+    <p>Missing Option - Upload Profile Photo</p>
+
+</fieldset>
+
+    <%= f.submit %>
+
 <% end %>

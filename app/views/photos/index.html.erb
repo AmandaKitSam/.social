@@ -1,0 +1,14 @@
+<h1>All Photos</h1>
+
+<% @photos.each do |p| %>
+  Title: <%= p.title %></br>
+  <%= image_tag p.image %></br>
+  Comment: <%= p.comment %></br>
+  Comment by: <%= p.user_id %></br>
+<% end %>
+
+<textarea name="comments" cols="40" rows="10">
+  Enter your comments...
+</textarea>
+
+<button type="submit" name="submit">Reply</button>

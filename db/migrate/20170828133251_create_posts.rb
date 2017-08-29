@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     create_table :posts do |t|
       t.date :dateOfPost
       t.text :reply
-      t.integer :likes
       t.integer :user_id
       t.integer :post_id
 
