@@ -1,11 +1,17 @@
 <h1>Edit User</h1>
 
 <%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
   <%= f.label :email %>
   <%= f.email_field :email %>
 
   <%= f.label :dob %>
   <%= f.date_field :dob %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
 
   <%= f.submit %>
 <% end %>
