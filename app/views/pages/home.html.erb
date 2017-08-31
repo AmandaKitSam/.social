@@ -1,16 +1,38 @@
-<h1>views/pages/home.html.erb</h1>
-
-<h1>Home Page</h1>
-
+<h4>Get your friends - share your photos - share your thoughts <i class="em em-blush"></i> </h4>
 
 <% if @current_user.present? %>
-  Welcome Back <%= @current_user.name %></br>
+  Welcome Back <%= @current_user.name %>!</br>
 <% end %>
 
 
 <% if @current_user.present?  %>
   <%= image_tag @current_user.userPhoto, :class => 'userPhoto' unless @current_user.userPhoto.nil? %></br>
+  -------------</br>
   Log in as: <%= @current_user.email %></br>
   Location: <%= @current_user.location %></br>
   Joined: <%= time_ago_in_words(@current_user.created_at) %> ago</br>
+  <% else %>
+  <h1>Today's Top Posts</h1>
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Sleep Yourself to A Better Memory?</h2>
+      <p>
+        Every lifestyle choice has the potential to affect your cognitive abilities and health.
+        In recent years, various researchers have found that a habit that most of us take for granted
+        — sleep — may affect our memory in noticeable ways.</br>
+        Does sleep help long term memories stick?</br>
+        In a study published in the June 2011 issue of Science, University of Washington researchers studied
+        how sleep might impact long-term memories. How? By using a special breed of fruit flies that could be
+        induced to sleep on demand.
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h2>Amanda says</h2>
+      <p>
+        Sleep is very important. lacking of sleep makes Amanda stupid. <i class="em em-cry"></i> <i class="em em-cry"></i> <i class="em em-cry"></i>
+      </p>
+    </div>
+  </div>
+
 <% end %>

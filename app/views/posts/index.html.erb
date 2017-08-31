@@ -1,25 +1,28 @@
 <h1>All Posts</h1>
 
 <%= link_to 'Create Post', new_post_path %></br>
+<hr>
 
 <% @posts.each do |p| %>
+  <%= link_to 'Edit Post', edit_post_path(p) %> / 
+  <%= link_to 'Delete Post', post_path(p), :method => 'delete' %></br>
   Date Of Post: <%= p.dateOfPost %></br>
   Post: <%= p.reply %></br>
-  <%= link_to 'Edit Post', edit_post_path(p) %>
-  <%= link_to 'Delete Post', post_path(p), :method => 'delete' %></br>
-
 
   <% p.comments.each do | com | %>
   <p> Posted by: <%= com.user.email %> </p>
   <p><%= com.message%> </p>
-  <hr>
+  --------------------------
   <% end %>
 
+  <fieldset class="form-group">
   <%= form_for @comment do |c| %>
     <%= c.label :message %>
     <%= c.text_field :message, :required => true %>
     <%= hidden_field_tag :post_id, p.id %>
-    <%= c.submit %>
+    <%= c.submit "Reply", :class => 'btn btn-info' %>
   <% end %>
+  </fieldset>
+  <hr>
 
 <% end %>

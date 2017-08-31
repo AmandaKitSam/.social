@@ -1,12 +1,18 @@
-<h1>Edit Posts</h1>
-
+<h1>Edit Post</h1>
+<hr>
 <%= form_for @post do |f| %>
-  <%= f.label :dateOfPost %>
-  <%= f.text_field :dateOfPost %>
+  <fieldset class="form-group">
+  <%= f.label :dateOfPost, "Date of Post:", class: "col-sm-2 control-label" %>
+  <%= f.text_field :dateOfPost, class: "col-sm-2 control-label" %>
+  </fieldset>
 
-  <%= f.label :reply %>
-  <%= f.text_field :reply %>
+  <fieldset class="form-group">
+  <%= f.label :reply, "Comment:", class: "col-sm-2 control-label" %>
+  <%= f.text_field :reply, class: "col-sm-2 control-label" %>
+  </fieldset>
 
-  <%= f.submit %>
+  <fieldset class="form-group">
+  <%= f.submit "Edit Post", :class => 'btn btn-success' %>
+  </fieldset>
 
   <% end %>

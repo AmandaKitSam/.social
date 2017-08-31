@@ -7,3 +7,19 @@
   border: 1px solid grey;
   box-shadow: 10px 10px 5px #888888;
 }
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+body {
+  background-image: url('/assets/background2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

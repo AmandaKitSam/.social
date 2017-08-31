@@ -1,18 +1,13 @@
 <h1>All Photos</h1>
 
 <%= link_to 'Create Photo', new_photo_path %></br>
-
+<hr>
 
 <% @photos.each do |p| %>
   Title: <%= p.title %></br>
   <%= image_tag p.image %></br>
   Comment: <%= p.comment %></br>
-  <%= link_to 'Edit Photo', edit_photo_path(p) %></br>
+  <%= link_to 'Edit Photo', edit_photo_path(p) %> / 
   <%= link_to 'Delete Photo', photo_path(p), :method => 'delete' %></br>
+  <hr>
 <% end %>
-
-<!-- <textarea name="comments" cols="40" rows="10">
-  Enter your comments...
-</textarea>
-
-<button type="submit" name="submit">Reply</button> -->

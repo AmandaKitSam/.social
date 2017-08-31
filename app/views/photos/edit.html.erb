@@ -1,21 +1,28 @@
 <h1>Edit Photos</h1>
 
-<%= form_for @photo, :html => {:multipart => true} do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<%= form_for @photo, :html => {:multipart => true}, class: "form-horizontal" do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :title, "Title: ", class: "col-sm-2 control-label" %>
+    <%= f.text_field :title, class: "col-sm-2 control-label" %>
+  </fieldset>
 
-  <p>Add an URL link:</p>
-  <%= f.label :image %>
-  <%= f.text_field :image %>
+  <!-- <fieldset class="form-group">
+    <%= f.label :image, "URL Image: ", class: "col-sm-2 control-label" %>
+    <%= f.text_field :image, class: "col-sm-2 control-label" %>
+  </fieldset> -->
 
-  <p>Add an URL link:</p>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+  <fieldset class="form-group">
+    <%= f.label :image, "Image: ", class: "col-sm-2 control-label" %>
+    <%= f.file_field :image, class: "col-sm-2 control-label" %>
+  </fieldset>
 
+  <fieldset class="form-group">
+    <%= f.label :comment, "Comment: ", class: "col-sm-2 control-label" %>
+    <%= f.text_field :comment, class: "col-sm-2 control-label", :required => true %>
+  </fieldset>
 
-  <%= f.label :comment %>
-  <%= f.text_field :comment, :required => true %>
-
-  <%= f.submit %>
+  <fieldset class="form-group">
+    <%= f.submit "Update Photo", :class => 'btn btn-success' %>
+  </fieldset>
 
   <% end %>

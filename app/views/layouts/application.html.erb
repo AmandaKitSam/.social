@@ -7,15 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   </head>
 
   <body>
 
     <div class="container">
 
-      <!-- <nav>
+      <!-- reference
+      <nav>
         <%= link_to 'Home', root_path %>
-
         <% if @current_user.present? %>
           <%= link_to 'All Photos', photos_path %>
           <%= link_to 'All Posts', posts_path %>
@@ -24,8 +25,9 @@
         <% else %>
           <%= link_to 'Sign up', new_user_path %>
           <%= link_to 'Sign in', login_path %>
-        <% end %> -->
-      <!-- </nav> -->
+        <% end %>
+      </nav>
+       -->
 
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">

@@ -1,8 +1,6 @@
-<h4>To create a post here:</h4>
-
-
 <%= form_for @post, html: {multipart: true}, class: "form-horizontal" do |form| %>
 
+<hr>
 
   <fieldset class="form-group">
     <div class="field">
@@ -25,7 +23,7 @@
 
   <fieldset class="form-group">
     <div class="actions">
-    <%= form.submit "Create A Post", :class => 'btn btn-primary' %>
+    <%= form.submit "Create A Post", :class => 'btn btn-success' %>
     </div>
   </fieldset>
 
