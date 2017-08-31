@@ -1,24 +1,32 @@
-<h1>Post</h1>
-
-<%= form_for @post, html: {multipart: true} do |form| %>
+<h4>To create a post here:</h4>
 
 
-  <div class="field">
-  <%= form.label :dateOfPost %>
-  <%= form.date :dateOfPost %>
-  </div>
+<%= form_for @post, html: {multipart: true}, class: "form-horizontal" do |form| %>
 
-  <div class="field">
+
+  <fieldset class="form-group">
+    <div class="field">
+    <%= form.label :dateOfPost, "Date of Post: ", class: "col-sm-2 control-label" %>
+    <%= form.text_area :dateOfPost, class: "col-sm-2 control-label" %>
+    </div>
+  </fieldset>
+
+  <!-- <div class="field">
   <%= form.label :user_id %>
   <%= form.file_field :user_id %>
-  </div>
+  </div> -->
 
-  <div class="field">
-  <%= form.label :reply %>
-  <%= form.text_area :reply %>
-  </div>
+  <fieldset class="form-group">
+    <div class="field">
+    <%= form.label :reply, "Your Thoughts: ", class: "col-sm-2 control-label" %>
+    <%= form.text_area :reply, class: "col-sm-2 control-label" %>
+    </div>
+  </fieldset>
 
-  <div class="actions">
-  <%= form.submit %>
-  </div>
+  <fieldset class="form-group">
+    <div class="actions">
+    <%= form.submit "Create A Post", :class => 'btn btn-primary' %>
+    </div>
+  </fieldset>
+
 <% end %>

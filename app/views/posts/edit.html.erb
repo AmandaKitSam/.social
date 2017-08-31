@@ -1,2 +1,12 @@
-<h1>Post#edit</h1>
-<p>Find me in app/views/post/edit.html.erb</p>
+<h1>Edit Posts</h1>
+
+<%= form_for @post do |f| %>
+  <%= f.label :dateOfPost %>
+  <%= f.text_field :dateOfPost %>
+
+  <%= f.label :reply %>
+  <%= f.text_field :reply %>
+
+  <%= f.submit %>
+
+  <% end %>

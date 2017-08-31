@@ -17,13 +17,10 @@
     <%= f.text_field :location %>
 
     <%= f.label :userPhoto %>
-    <%= f.text_field :userPhoto %>
-    <input type="submit" value="Upload">
-
-    <p>Missing Option - Upload Profile Photo</p>
-
-</fieldset>
+    <%= f.file_field :userPhoto %>
 
     <%= f.submit %>
+
+</fieldset>
 
 <% end %>

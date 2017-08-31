@@ -1,14 +1,25 @@
 <h1>All Posts</h1>
 
+<%= link_to 'Create Post', new_post_path %></br>
+
 <% @posts.each do |p| %>
   Date Of Post: <%= p.dateOfPost %></br>
   Post: <%= p.reply %></br>
+  <%= link_to 'Edit Post', edit_post_path(p) %>
+  <%= link_to 'Delete Post', post_path(p), :method => 'delete' %></br>
+
+
+  <% p.comments.each do | com | %>
+  <p> Posted by: <%= com.user.email %> </p>
+  <p><%= com.message%> </p>
+  <hr>
+  <% end %>
+
+  <%= form_for @comment do |c| %>
+    <%= c.label :message %>
+    <%= c.text_field :message, :required => true %>
+    <%= hidden_field_tag :post_id, p.id %>
+    <%= c.submit %>
+  <% end %>
+
 <% end %>
-
-<textarea name="comments" cols="40" rows="10">
-  Enter your comments...
-</textarea>
-
-<button type="submit" name="submit">Reply</button>
-
-<p>Find me in app/views/post/index.html.erb</p>

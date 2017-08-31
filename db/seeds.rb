@@ -8,14 +8,29 @@
 
 
 User.destroy_all
-
-u1 = User.create :email => 'amanda@ga.co', :password => 'chicken', :password_confirmation => 'chicken', :name => 'Amanda', :location => 'Sydney', :joinedDate => '28/08/2017', :dob => '24/09', :userPhoto => 'https://www.unitedwaynorman.org/sites/unitedwaynorman.org/files/cutepuppy.jpg'
+u1 = User.create :email => 'amanda@ga.co', :password => 'chicken', :password_confirmation => 'chicken', :name => 'Amanda', :location => 'Sydney', :joinedDate => '28/08/2017', :dob => '24/09', :userPhoto => 'https://www.unitedwaynorman.org/sites/unitedwaynorman.org/files/cutepuppy.jpg', :admin => true
 u2 = User.create :email => 'john@ga.co', :password => 'chicken', :password_confirmation => 'chicken', :name => 'John', :location => 'Sydney', :joinedDate => '28/08/2017', :dob => '05/01', :userPhoto => 'http://clipart.info/images/ccovers/1495586613iron-man-face-clipart-png.png'
 
 
 Photo.destroy_all
-p1 = Photo.create :title => 'lovely day', :image => 'https://www.reviewjournal.com/wp-content/uploads/2013/05/8435529-0-150007.jpg', :comment => 'when you see lovely sky like this, life is not so bad'
+p1 = Photo.create :title => 'Lovely Day', :image => 'https://www.reviewjournal.com/wp-content/uploads/2013/05/8435529-0-150007.jpg', :comment => 'when you see lovely sky like this, life is not so bad', :user_id => 1
 
 
 Post.destroy_all
-m1 = Post.create :dateOfPost => '29/08/2017', :reply => "Hi all, what's your plan for the weekend?"
+m1 = Post.create :dateOfPost => '29/08/2017', :reply => "Hi all, what's your plan for the weekend?", :user_id => 1
+m2 = Post.create :dateOfPost => '29/08/2017', :reply => "Hey, come over to my place this Sat for drinks", :user_id => 1
+
+
+Comment.destroy_all
+c1 = Comment.create :message => "I'm going to the movies, you?", :user_id => 1, :post_id => 1
+c2 = Comment.create :message => "Drinks sound great! See you then", :user_id => 2, :post_id => 2
+
+
+# Relationship.destroy_all
+# # Following relationships
+# users = User.all
+# user  = users.first
+# following = users[2..50]
+# followers = users[3..40]
+# following.each { |followed| user.follow(followed) }
+# followers.each { |follower| follower.follow(user) }

@@ -6,25 +6,50 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
 
-    <nav>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'All Photos', photos_path %>
-      <%= link_to 'All Posts', posts_path %>
+    <div class="container">
 
-      <% if @current_user.present? %>
-        <%= link_to "Edit profile", edit_user_path(@current_user) %>
-        <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
-      <% else %>
-        <%= link_to 'Sign up', new_user_path %>
-        <%= link_to 'Sign in', login_path %>
-      <% end %>
-    </nav>
+      <!-- <nav>
+        <%= link_to 'Home', root_path %>
 
-    <%= yield %>
+        <% if @current_user.present? %>
+          <%= link_to 'All Photos', photos_path %>
+          <%= link_to 'All Posts', posts_path %>
+          <%= link_to "Edit profile", edit_user_path(@current_user) %>
+          <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
+        <% else %>
+          <%= link_to 'Sign up', new_user_path %>
+          <%= link_to 'Sign in', login_path %>
+        <% end %> -->
+      <!-- </nav> -->
+
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="<%= root_path %>">Social Butterfly</a>
+          </div>
+          <% if @current_user.present? %>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="<%= photos_path %>">All Photos</a></li>
+            <li><a href="<%= posts_path %>">All Posts</a></li>
+            <li><a href="<%= edit_user_path(@current_user) %>">Edit Profile</a></li>
+            <li><%= link_to "Sign Out #{ @current_user.email }", login_path, :method => 'delete' %></li>
+          </ul>
+          <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="<%= new_user_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="<%= login_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+          <% end %>
+        </div>
+      </nav>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
 
