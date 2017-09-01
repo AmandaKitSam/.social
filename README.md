@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project 01 / By Amanda Sam
 
-Things you may want to cover:
+### .Social - A place for you and your friends to share photos and thoughts
 
-* Ruby version
 
-* System dependencies
+* Users: Login, Log out, Sign up, Edit User's Profile (Update Profile Photo, Show User's Name, Joined Time, User's Location)
 
-* Configuration
+* Posts and comments: Create, Edit & Delete a post; other users can leave comments for each post
 
-* Database creation
+* Photos: Create, Edit & Delete a photo
 
-* Database initialization
+* Prerequisites:
+  - Ruby on Rails
+  - Postgresql
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Check out the website here: https://project1-amanda.herokuapp.com/

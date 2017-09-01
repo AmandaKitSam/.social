@@ -17,13 +17,13 @@ p1 = Photo.create :title => 'Lovely Day', :image => 'https://www.reviewjournal.c
 
 
 Post.destroy_all
-m1 = Post.create :dateOfPost => '29/08/2017', :reply => "Hi all, what's your plan for the weekend?", :user_id => 1
-m2 = Post.create :dateOfPost => '29/08/2017', :reply => "Hey, come over to my place this Sat for drinks", :user_id => 1
+m1 = Post.create :dateOfPost => '29/08/2017', :reply => "Hi all, what's your plan for the weekend?", :user_id => u1.id
+m2 = Post.create :dateOfPost => '29/08/2017', :reply => "Hey, come over to my place this Sat for drinks", :user_id => u2.id
 
 
 Comment.destroy_all
-c1 = Comment.create :message => "I'm going to the movies, you?", :user_id => 1, :post_id => 1
-c2 = Comment.create :message => "Drinks sound great! See you then", :user_id => 2, :post_id => 2
+c1 = Comment.create :message => "I'm going to the movies, you?", :user_id => u1.id, :post_id => m1.id
+c2 = Comment.create :message => "Drinks sound great! See you then", :user_id => u2.id, :post_id => m2.id
 
 
 # Relationship.destroy_all
