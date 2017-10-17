@@ -1,20 +1,28 @@
 <h1>All Posts</h1>
 
+<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
 <%= link_to 'Create Post', new_post_path %></br>
 <hr>
 
 <% @posts.each do |p| %>
-  <%= link_to 'Edit Post', edit_post_path(p) %> / 
-  <%= link_to 'Delete Post', post_path(p), :method => 'delete' %></br>
+<!-- <div class="col-md-offset-2 col-md-8 col-xs-12 text-center"> -->
   Date Of Post: <%= p.dateOfPost %></br>
-  Post: <%= p.reply %></br>
-
+  Post: "<%= p.reply %>"</br>
   <% p.comments.each do | com | %>
   <p> Posted by: <%= com.user.email %> </p>
-  <p><%= com.message%> </p>
-  --------------------------
+
+  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+  <%= link_to 'Edit Post', edit_post_path(p) %> /
+  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+  <%= link_to 'Delete Post', post_path(p), :method => 'delete' %></br>
+
+  ------------------------------
+  <h5>Your friend reply:</h5>
+  <p> "<%= com.message%>" </p>
   <% end %>
 
+  -----------------------------
+  <h5>Leave more messages:</h5>
   <fieldset class="form-group">
   <%= form_for @comment do |c| %>
     <%= c.label :message %>
@@ -26,3 +34,4 @@
   <hr>
 
 <% end %>
+<!-- </div> -->

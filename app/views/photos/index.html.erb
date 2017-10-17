@@ -1,13 +1,45 @@
 <h1>All Photos</h1>
 
+<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
 <%= link_to 'Create Photo', new_photo_path %></br>
 <hr>
 
 <% @photos.each do |p| %>
-  Title: <%= p.title %></br>
-  <%= image_tag p.image %></br>
-  Comment: <%= p.comment %></br>
-  <%= link_to 'Edit Photo', edit_photo_path(p) %> / 
-  <%= link_to 'Delete Photo', photo_path(p), :method => 'delete' %></br>
-  <hr>
+  <div class="photoContainer">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8 col-xs-12 text-center">
+
+        <p class="id" style="display: none;"><%= p.id %></p>
+        <%= image_tag p.image %></br>
+
+        <h4>Title: <%= p.title %></h4>
+        <p>Comment: <%= p.comment %></p>
+        <button class="btn btn-success like"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <%= p.likes.count %></button>
+        </br>
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <%= link_to 'Edit Photo', edit_photo_path(p) %> |
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <%= link_to 'Delete Photo', photo_path(p), :method => 'delete' %></br>
+        <hr>
+      </div>
+    </div>
+  </div>
 <% end %>
+
+<script>
+  $('.like').on('click', function(){
+    const id = $( this ).parent().find('.id').text();
+    const likes = this.innerText;
+    let likeCount = parseInt( likes );
+
+    $.ajax({
+      type: "POST",
+      url: "/likes",
+      data: { user_id: <%= @current_user.id %>, photo_id: id },
+      success: function(){
+        this.innerText = likeCount += 1;
+      },
+      headers: {
+        'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+      }
+    })
+  })
+</script>

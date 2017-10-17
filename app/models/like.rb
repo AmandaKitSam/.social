@@ -11,11 +11,14 @@
 #
 
 class Like < ApplicationRecord
-  # belongs_to :user, :optional => true
-  # belongs_to :post, :optional => true
-  # belongs_to :photo, :optional => true
-  #
+  belongs_to :user
+  # belongs_to :post
+  belongs_to :photo, :optional => true
+
+  validates_uniqueness_of :user_id, :scope => :photo
+
   # validates :user_id, :presence => true
   # validates :post_id, :presence => true
+
 
 end

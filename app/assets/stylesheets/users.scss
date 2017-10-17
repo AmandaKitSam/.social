@@ -23,3 +23,23 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+img {
+  max-width: 100%;
+}
+
+// All Photos - index.html.erb
+.photoContainer img {
+  max-height: 510px;
+
+  // @media
+  // {
+  //
+  // }
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////

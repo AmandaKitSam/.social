@@ -1,10 +1,19 @@
 class LikesController < ApplicationController
 
     def create
-      @user = @current_user
-      @post = Post.find params[:post_id]
-      @post.likeit(@user)
-      redirect_to request.referrer || root_path
+      # @user = @current_user
+      # @post = Post.find params[:post_id]
+      # @post.likeit(@user)
+      # redirect_to request.referrer || root_path
+
+      @like = Like.new( user_id: params["user_id"].to_i, photo_id: params["photo_id"] )
+       respond_to do |format|
+         if @like.save
+           format.html {}
+           format.json {}
+         end
+       end
+
     end
 
     def destroy

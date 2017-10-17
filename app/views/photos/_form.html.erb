@@ -3,24 +3,19 @@
 <%= form_for @photo, html: {multipart: true}, class: "form-horizontal" do |form| %>
 
   <fieldset class="form-group">
-    <div class="field">
     <%= form.label :title, "Title: ", class: "col-sm-2 control-label" %>
-    <%= form.text_area :title, class: "col-sm-2 control-label" %>
-    </div>
+    <div class="col-sm-10"><%= form.text_area :title, class: "form-control" %></div>
+
   </fieldset>
 
   <fieldset class="form-group">
-    <div class="field">
     <%= form.label :image, "Image: ", class: "col-sm-2 control-label" %>
-    <%= form.file_field :image, class: "col-sm-2 control-label" %>
-    </div>
+    <div class="col-sm-10"><%= form.file_field :image %></div>
   </fieldset>
 
   <fieldset class="form-group">
-    <div class="field">
     <%= form.label :comment, "Comment: ", class: "col-sm-2 control-label" %>
-    <%= form.text_area :comment, class: "col-sm-2 control-label" %>
-    </div>
+    <div class="col-sm-10"><%= form.text_area :comment, class: "form-control" %></div>
   </fieldset>
 
   <div class="actions">

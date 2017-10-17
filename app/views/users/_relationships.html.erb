@@ -1,7 +1,7 @@
 <p>
-  <%= link_to "#{@user.following.count} following", following_user_path(@current_user), :class=>"btn btn-info follow-button"%>
-</p>
+  <% @user.relationships.each do |relation| %>
+    user = User.find_by( relationship.followed_id )
 
-<p>
-  <%= link_to "#{@user.followers.count} followers", followers_user_path(@current_user), :class=>"btn btn-info follow-button"%>
+    <p><%= user.name %></p>
+  <% end %>
 </p>
