@@ -1,8 +1,8 @@
-# README
+# .Social
 
-## Project 01 / By Amanda Sam
+## Project - By Amanda Sam
 
-### .Social - A place for you and your friends to share photos and thoughts
+### .Social - It's a social network where you and your friends can share photos and leave messages for each other.
 
 
 * Users: Login, Log out, Sign up, Edit User's Profile (Update Profile Photo, Show User's Name, Joined Time, User's Location)
