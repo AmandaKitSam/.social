@@ -8,7 +8,7 @@
 
 - "Tell all of your friends, that they now have a new place to share their photos and feelings. Sign up a free account today!"
 
-- "You are welcome to post a photos and leave some messages for your friends to reply."
+- "You are welcome to post a photo and leave some comments for your friends to reply."
 
 ------
 
