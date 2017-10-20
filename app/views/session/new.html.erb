@@ -1,22 +1,29 @@
-<h1>Sign In</h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
 
-<% if flash[:error].present? %>
-  <p class="error">
-    <%= flash[:error] %>
-  </p>
-<% end %>
+    <h1 class="text-center">Sign In</h1>
 
-<%= form_tag login_path, :class => 'form-inline' do %>
+    <% if flash[:error].present? %>
+      <p class="error">
+        <%= flash[:error] %>
+      </p>
+    <% end %>
 
-  <div class="form-group">
-    <%= label_tag :email %>
-    <%= email_field_tag :email, nil, :class => 'form-control' %>
+    <%= form_tag login_path, :class => 'form-inline' do %>
+
+      <div class="form-group">
+
+        <%= email_field_tag :email, nil, :class => 'form-control', :placeholder => 'Email', autofocus: true %>
+      </div>
+
+      <div class="form-group">
+
+        <%= password_field_tag :password, nil, :class => 'form-control', :placeholder => 'Password' %>
+      </div>
+
+      <br/><br/>
+      <%= submit_tag 'Login', :class => 'btn btn-warning btn-xl btn-block' %>
+    <% end %>
+
   </div>
-
-  <div class="form-group">
-    <%= label_tag :password %>
-    <%= password_field_tag :password, nil, :class => 'form-control' %>
-  </div>
-
-  <%= submit_tag 'Login', :class => 'btn btn-warning btn-xl' %>
-<% end %>
+</div>
