@@ -1,12 +1,14 @@
 # .Social
 
-## Project - By Amanda Sam
+## 1st Project in Rails
 
-### Using skills in Ruby on Rails, AJAX, jQuery, JavaScript, SCSS, CSS3 and Bootstrap
+## By Amanda Sam
+
+### Built in Ruby on Rails, AJAX, jQuery, JavaScript, SCSS, CSS3 and Bootstrap
 
 #### Description - It's a social network where you and your friends can share photos and leave messages for each other.
 
-- "Tell all of your friends, that they now have a new place to share their photos and feelings. Sign up a free account today!"
+- "Tell all of your friends - A new place to share your photos and feelings. Sign up a free account today!"
 
 - "You are welcome to post a photo and leave some comments for your friends to reply."
 
